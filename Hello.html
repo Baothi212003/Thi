@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<!-- saved from url=(0165)http://13.229.152.199/noel/?Fbclid=IwAR2cfn0oi3hWmDzRIOEoxNXJbO9QhjnKEuP1WvZ5sERIRmbXtxgCqOQv6Ko&fbclid=IwAR2Fah0fw1IzCPSDYPPk3tY45m5WrFfROzXaF42IVVfYTG5cog2qO-1Hf0o -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Hello</title>
+  <link rel="stylesheet" href="./Hello_files/style.css">
+  <script src="./Hello_files/313025c77d.js.tải xuống" crossorigin="anonymous"></script>
+<script async="" src="./Hello_files/js"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BVHL0CPG6X');
+</script><meta name="shimejiBrowserExtensionId" content="gohjpllcolmccldfdggmamodembldgpc" data-version="1.6.5"><style type="text/css">
+@charset "UTF-8";
+/*!
+ * jQuery contextMenu - Plugin for simple contextMenu handling
+ *
+ * Version: v2.5.0
+ *
+ * Authors: Björn Brala (SWIS.nl), Rodney Rehm, Addy Osmani (patches for FF)
+ * Web: http://swisnl.github.io/jQuery-contextMenu/
+ *
+ * Copyright (c) 2011-2017 SWIS BV and contributors
+ *
+ * Licensed under
+ *   MIT License http://www.opensource.org/licenses/mit-license
+ *
+ * Date: 2017-05-25T11:30:28.663Z
+ */
+@-webkit-keyframes cm-spin {
+  0% {
+    -webkit-transform: translateY(-50%) rotate(0deg);
+            transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translateY(-50%) rotate(359deg);
+            transform: translateY(-50%) rotate(359deg);
+  }
+}
+@-o-keyframes cm-spin {
+  0% {
+    -webkit-transform: translateY(-50%) rotate(0deg);
+         -o-transform: translateY(-50%) rotate(0deg);
+            transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translateY(-50%) rotate(359deg);
+         -o-transform: translateY(-50%) rotate(359deg);
+            transform: translateY(-50%) rotate(359deg);
+  }
+}
+@keyframes cm-spin {
+  0% {
+    -webkit-transform: translateY(-50%) rotate(0deg);
+         -o-transform: translateY(-50%) rotate(0deg);
+            transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translateY(-50%) rotate(359deg);
+         -o-transform: translateY(-50%) rotate(359deg);
+            transform: translateY(-50%) rotate(359deg);
+  }
+}
+
+@font-face {
+  font-family: "context-menu-icons";
+  font-style: normal;
+  font-weight: normal;
+
+  src: url("font/context-menu-icons.eot?4yg1f");
+  src: url("font/context-menu-icons.eot?4yg1f#iefix") format("embedded-opentype"), url("font/context-menu-icons.woff2?4yg1f") format("woff2"), url("font/context-menu-icons.woff?4yg1f") format("woff"), url("font/context-menu-icons.ttf?4yg1f") format("truetype");
+}
+
+.context-menu-icon-add:before {
+  content: "EA01";
+}
+
+.context-menu-icon-copy:before {
+  content: "EA02";
+}
+
+.context-menu-icon-cut:before {
+  content: "EA03";
+}
+
+.context-menu-icon-delete:before {
+  content: "EA04";
+}
+
+.context-menu-icon-edit:before {
+  content: "EA05";
+}
+
+.context-menu-icon-loading:before {
+  content: "EA06";
+}
+
+.context-menu-icon-paste:before {
+  content: "EA07";
+}
+
+.context-menu-icon-quit:before {
+  content: "EA08";
+}
+
+.context-menu-icon::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 2em;
+  font-family: "context-menu-icons";
+  font-size: 1em;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  color: #2980b9;
+  text-align: center;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+       -o-transform: translateY(-50%);
+          transform: translateY(-50%);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.context-menu-icon.context-menu-hover:before {
+  color: #fff;
+}
+
+.context-menu-icon.context-menu-disabled::before {
+  color: #bbb;
+}
+
+.context-menu-icon.context-menu-icon-loading:before {
+  -webkit-animation: cm-spin 2s infinite;
+       -o-animation: cm-spin 2s infinite;
+          animation: cm-spin 2s infinite;
+}
+
+.context-menu-icon.context-menu-icon--fa {
+  display: list-item;
+  font-family: inherit;
+}
+.context-menu-icon.context-menu-icon--fa::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 2em;
+  font-family: FontAwesome;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  color: #2980b9;
+  text-align: center;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+       -o-transform: translateY(-50%);
+          transform: translateY(-50%);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.context-menu-icon.context-menu-icon--fa.context-menu-hover:before {
+  color: #fff;
+}
+.context-menu-icon.context-menu-icon--fa.context-menu-disabled::before {
+  color: #bbb;
+}
+
+.context-menu-list {
+  position: absolute;
+  display: inline-block;
+  min-width: 13em;
+  max-width: 26em;
+  padding: .25em 0;
+  margin: .3em;
+  font-family: inherit;
+  font-size: inherit;
+  list-style-type: none;
+  background: #fff;
+  border: 1px solid #bebebe;
+  border-radius: .2em;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+}
+
+.context-menu-item {
+  position: relative;
+  padding: .2em 2em;
+  color: #2f2f2f;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: #fff;
+}
+
+.context-menu-separator {
+  padding: 0;
+  margin: .35em 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.context-menu-item > label > input,
+.context-menu-item > label > textarea {
+  -webkit-user-select: text;
+     -moz-user-select: text;
+      -ms-user-select: text;
+          user-select: text;
+}
+
+.context-menu-item.context-menu-hover {
+  color: #fff;
+  cursor: pointer;
+  background-color: #2980b9;
+}
+
+.context-menu-item.context-menu-disabled {
+  color: #bbb;
+  cursor: default;
+  background-color: #fff;
+}
+
+.context-menu-input.context-menu-hover {
+  color: #2f2f2f;
+  cursor: default;
+}
+
+.context-menu-submenu:after {
+  position: absolute;
+  top: 50%;
+  right: .5em;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  content: '';
+  border-color: transparent transparent transparent #2f2f2f;
+  border-style: solid;
+  border-width: .25em 0 .25em .25em;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+       -o-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+/**
+ * Inputs
+ */
+.context-menu-item.context-menu-input {
+  padding: .3em .6em;
+}
+
+/* vertically align inside labels */
+.context-menu-input > label > * {
+  vertical-align: top;
+}
+
+/* position checkboxes and radios as icons */
+.context-menu-input > label > input[type="checkbox"],
+.context-menu-input > label > input[type="radio"] {
+  position: relative;
+  top: .12em;
+  margin-right: .4em;
+}
+
+.context-menu-input > label {
+  margin: 0;
+}
+
+.context-menu-input > label,
+.context-menu-input > label > input[type="text"],
+.context-menu-input > label > textarea,
+.context-menu-input > label > select {
+  display: block;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.context-menu-input > label > textarea {
+  height: 7em;
+}
+
+.context-menu-item > .context-menu-list {
+  top: .3em;
+  /* re-positioned by js */
+  right: -.3em;
+  display: none;
+}
+
+.context-menu-item.context-menu-visible > .context-menu-list {
+  display: block;
+}
+
+.context-menu-accesskey {
+  text-decoration: underline;
+}
+</style><style type="text/css">
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+.context-menu-list {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 14px;
+  text-align: left;
+  font-weight: normal;
+  width: 200px;
+}
+.context-menu-item {
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  text-align: left;
+}
+.contextmenu-item-custom.contextmenu-item-custom__accent:not(:hover) {
+  background-color: #f8ffeb;
+}
+.contextmenu-item-custom.contextmenu-item-custom__success:not(:hover) {
+  background-color: #eeffcd;
+}
+</style><style type="text/css"></style></head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+<body>
+
+  <div class="container">
+    <p id="days"> Noel này cậu đi chơi với tớ nhé ^^ </p>
+    <div class="rep">
+      <button style="position: absolute;" class="no">Không</button>
+      <a class="yes" id="yes" href="http://13.229.152.199/noel/yes.html">Tớ đồng ý <i style="color: red;" class="fas fa-heart" aria-hidden="true"></i></a>
+    </div>
+    <img style="height: 50%; margin-left: 120px;" src="./Hello_files/thong.png">
+    <img style="height: 60%; float: right; margin-right: 120px;" src="./Hello_files/onggia.png">
+  </div>
+
+  <script src="./Hello_files/jquery.min.js.tải xuống"></script>
+  <script src="./Hello_files/script.js.tải xuống"></script><div class="drop snow" id="drop_150" style="left: 1264px;"></div><div class="drop snow" id="drop_149" style="left: 340px;"></div><div class="drop snow" id="drop_148" style="left: 137px;"></div><div class="drop snow" id="drop_147" style="left: 729px;"></div><div class="drop snow" id="drop_146" style="left: 211px;"></div><div class="drop snow" id="drop_145" style="left: 1194px;"></div><div class="drop snow" id="drop_144" style="left: 442px;"></div><div class="drop snow animate" id="drop_143" style="left: 128px;"></div><div class="drop snow" id="drop_142" style="left: 230px;"></div><div class="drop snow" id="drop_141" style="left: 904px;"></div><div class="drop snow animate" id="drop_140" style="left: 803px;"></div><div class="drop snow animate" id="drop_139" style="left: 823px;"></div><div class="drop snow animate" id="drop_138" style="left: 362px;"></div><div class="drop snow" id="drop_137" style="left: 653px;"></div><div class="drop snow" id="drop_136" style="left: 139px;"></div><div class="drop snow" id="drop_135" style="left: 851px;"></div><div class="drop snow animate" id="drop_134" style="left: 144px;"></div><div class="drop snow" id="drop_133" style="left: 926px;"></div><div class="drop snow" id="drop_132" style="left: 917px;"></div><div class="drop snow animate" id="drop_131" style="left: 864px;"></div><div class="drop snow animate" id="drop_130" style="left: 120px;"></div><div class="drop snow animate" id="drop_129" style="left: 340px;"></div><div class="drop snow" id="drop_128" style="left: 262px;"></div><div class="drop snow animate" id="drop_127" style="left: 1124px;"></div><div class="drop snow" id="drop_126" style="left: 773px;"></div><div class="drop snow" id="drop_125" style="left: 1158px;"></div><div class="drop snow" id="drop_124" style="left: 351px;"></div><div class="drop snow animate" id="drop_123" style="left: 790px;"></div><div class="drop snow animate" id="drop_122" style="left: 1003px;"></div><div class="drop snow" id="drop_121" style="left: 311px;"></div><div class="drop snow" id="drop_120" style="left: 484px;"></div><div class="drop snow" id="drop_119" style="left: 452px;"></div><div class="drop snow" id="drop_118" style="left: 1059px;"></div><div class="drop snow" id="drop_117" style="left: 216px;"></div><div class="drop snow" id="drop_116" style="left: 461px;"></div><div class="drop snow" id="drop_115" style="left: 421px;"></div><div class="drop snow" id="drop_114" style="left: 374px;"></div><div class="drop snow animate" id="drop_113" style="left: 508px;"></div><div class="drop snow animate" id="drop_112" style="left: 1174px;"></div><div class="drop snow animate" id="drop_111" style="left: 599px;"></div><div class="drop snow" id="drop_110" style="left: 527px;"></div><div class="drop snow" id="drop_109" style="left: 1101px;"></div><div class="drop snow" id="drop_108" style="left: 515px;"></div><div class="drop snow animate" id="drop_107" style="left: 454px;"></div><div class="drop snow animate" id="drop_106" style="left: 1252px;"></div><div class="drop snow" id="drop_105" style="left: 371px;"></div><div class="drop snow animate" id="drop_104" style="left: 237px;"></div><div class="drop snow animate" id="drop_103" style="left: 160px;"></div><div class="drop snow" id="drop_102" style="left: 140px;"></div><div class="drop snow" id="drop_101" style="left: 1074px;"></div><div class="drop snow" id="drop_100" style="left: 296px;"></div><div class="drop snow" id="drop_99" style="left: 703px;"></div><div class="drop snow" id="drop_98" style="left: 560px;"></div><div class="drop snow" id="drop_97" style="left: 840px;"></div><div class="drop snow" id="drop_96" style="left: 1214px;"></div><div class="drop snow animate" id="drop_95" style="left: 984px;"></div><div class="drop snow" id="drop_94" style="left: 155px;"></div><div class="drop snow" id="drop_93" style="left: 457px;"></div><div class="drop snow animate" id="drop_92" style="left: 1023px;"></div><div class="drop snow" id="drop_91" style="left: 1179px;"></div><div class="drop snow" id="drop_90" style="left: 332px;"></div><div class="drop snow" id="drop_89" style="left: 595px;"></div><div class="drop snow animate" id="drop_88" style="left: 993px;"></div><div class="drop snow animate" id="drop_87" style="left: 1237px;"></div><div class="drop snow animate" id="drop_86" style="left: 1169px;"></div><div class="drop snow animate" id="drop_85" style="left: 1139px;"></div><div class="drop snow animate" id="drop_84" style="left: 128px;"></div><div class="drop snow" id="drop_83" style="left: 352px;"></div><div class="drop snow" id="drop_82" style="left: 600px;"></div><div class="drop snow animate" id="drop_81" style="left: 94px;"></div><div class="drop snow animate" id="drop_80" style="left: 760px;"></div><div class="drop snow" id="drop_79" style="left: 836px;"></div><div class="drop snow animate" id="drop_78" style="left: 1140px;"></div><div class="drop snow" id="drop_77" style="left: 294px;"></div><div class="drop snow" id="drop_76" style="left: 744px;"></div><div class="drop snow" id="drop_75" style="left: 695px;"></div><div class="drop snow animate" id="drop_74" style="left: 1100px;"></div><div class="drop snow" id="drop_73" style="left: 481px;"></div><div class="drop snow" id="drop_72" style="left: 1270px;"></div><div class="drop snow" id="drop_71" style="left: 135px;"></div><div class="drop snow" id="drop_70" style="left: 1173px;"></div><div class="drop snow animate" id="drop_69" style="left: 703px;"></div><div class="drop snow animate" id="drop_68" style="left: 1025px;"></div><div class="drop snow" id="drop_67" style="left: 1036px;"></div><div class="drop snow" id="drop_66" style="left: 321px;"></div><div class="drop snow animate" id="drop_65" style="left: 1142px;"></div><div class="drop snow animate" id="drop_64" style="left: 224px;"></div><div class="drop snow" id="drop_63" style="left: 1272px;"></div><div class="drop snow" id="drop_62" style="left: 740px;"></div><div class="drop snow animate" id="drop_61" style="left: 847px;"></div><div class="drop snow animate" id="drop_60" style="left: 845px;"></div><div class="drop snow animate" id="drop_59" style="left: 549px;"></div><div class="drop snow" id="drop_58" style="left: 1233px;"></div><div class="drop snow" id="drop_57" style="left: 750px;"></div><div class="drop snow" id="drop_56" style="left: 221px;"></div><div class="drop snow" id="drop_55" style="left: 324px;"></div><div class="drop snow animate" id="drop_54" style="left: 315px;"></div><div class="drop snow animate" id="drop_53" style="left: 1005px;"></div><div class="drop snow" id="drop_52" style="left: 554px;"></div><div class="drop snow animate" id="drop_51" style="left: 1248px;"></div><div class="drop snow animate" id="drop_50" style="left: 1069px;"></div><div class="drop snow animate" id="drop_49" style="left: 371px;"></div><div class="drop snow" id="drop_48" style="left: 1157px;"></div><div class="drop snow animate" id="drop_47" style="left: 404px;"></div><div class="drop snow animate" id="drop_46" style="left: 1210px;"></div><div class="drop snow" id="drop_45" style="left: 968px;"></div><div class="drop snow" id="drop_44" style="left: 1085px;"></div><div class="drop snow" id="drop_43" style="left: 1200px;"></div><div class="drop snow" id="drop_42" style="left: 526px;"></div><div class="drop snow animate" id="drop_41" style="left: 1063px;"></div><div class="drop snow" id="drop_40" style="left: 917px;"></div><div class="drop snow" id="drop_39" style="left: 228px;"></div><div class="drop snow" id="drop_38" style="left: 1274px;"></div><div class="drop snow" id="drop_37" style="left: 646px;"></div><div class="drop snow animate" id="drop_36" style="left: 913px;"></div><div class="drop snow" id="drop_35" style="left: 102px;"></div><div class="drop snow animate" id="drop_34" style="left: 837px;"></div><div class="drop snow" id="drop_33" style="left: 806px;"></div><div class="drop snow animate" id="drop_32" style="left: 1174px;"></div><div class="drop snow animate" id="drop_31" style="left: 1023px;"></div><div class="drop snow animate" id="drop_30" style="left: 535px;"></div><div class="drop snow" id="drop_29" style="left: 710px;"></div><div class="drop snow" id="drop_28" style="left: 238px;"></div><div class="drop snow animate" id="drop_27" style="left: 542px;"></div><div class="drop snow" id="drop_26" style="left: 828px;"></div><div class="drop snow animate" id="drop_25" style="left: 347px;"></div><div class="drop snow animate" id="drop_24" style="left: 634px;"></div><div class="drop snow animate" id="drop_23" style="left: 556px;"></div><div class="drop snow" id="drop_22" style="left: 694px;"></div><div class="drop snow animate" id="drop_21" style="left: 923px;"></div><div class="drop snow animate" id="drop_20" style="left: 144px;"></div><div class="drop snow" id="drop_19" style="left: 1131px;"></div><div class="drop snow animate" id="drop_18" style="left: 926px;"></div><div class="drop snow animate" id="drop_17" style="left: 1010px;"></div><div class="drop snow" id="drop_16" style="left: 937px;"></div><div class="drop snow animate" id="drop_15" style="left: 898px;"></div><div class="drop snow" id="drop_14" style="left: 850px;"></div><div class="drop snow" id="drop_13" style="left: 830px;"></div><div class="drop snow animate" id="drop_12" style="left: 324px;"></div><div class="drop snow" id="drop_11" style="left: 326px;"></div><div class="drop snow animate" id="drop_10" style="left: 161px;"></div><div class="drop snow animate" id="drop_9" style="left: 1141px;"></div><div class="drop snow" id="drop_8" style="left: 774px;"></div><div class="drop snow" id="drop_7" style="left: 104px;"></div><div class="drop snow animate" id="drop_6" style="left: 998px;"></div><div class="drop snow animate" id="drop_5" style="left: 619px;"></div><div class="drop snow" id="drop_4" style="left: 625px;"></div><div class="drop snow animate" id="drop_3" style="left: 924px;"></div><div class="drop snow" id="drop_2" style="left: 1259px;"></div><div class="drop snow animate" id="drop_1" style="left: 1098px;"></div>
+
+
+<script>
+  $('button').on('mouseover', function () {
+    $(this).animate({
+      'top': Math.random() * window.innerHeight + "px",
+      'left': Math.random() * window.innerWidth + "px"
+    }, "medium");
+  })
+</script>
+
+<div id="shimai-world" style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 2147483647; pointer-events: none; background: transparent;"></div></body><div style="position: absolute; top: 0px;"></div></html>
